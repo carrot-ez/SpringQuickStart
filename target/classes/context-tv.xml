@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+	
+	<!-- 
+		@id 			: optional
+		@class 			: essential
+		@init-method	: set init method
+		@destroy-method	: set destroy-method
+		@lazy-init		: allocate object if it requested
+		@scope			: default = "singleton", if you want it can change "prototype" -->
+	<bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" scope="singleton" >
+
+		<!-- dependency injection - constructor injection -->
+		<!-- 
+			@ref	: constructor parameter of reference
+			@value	: constructor parameter of value
+			@index	: order of constructor parameters, 0 ~ ... -->
+		<constructor-arg ref="apple" index="0"></constructor-arg>
+		<constructor-arg value="2700000" index="1"></constructor-arg>
+	</bean>
+	<bean id="sony" class="polymorphism.SonySpeaker"></bean>
+	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+</beans>
