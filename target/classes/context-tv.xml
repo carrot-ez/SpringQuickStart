@@ -17,8 +17,17 @@
 			@ref	: constructor parameter of reference
 			@value	: constructor parameter of value
 			@index	: order of constructor parameters, 0 ~ ... -->
+		<!--  
 		<constructor-arg ref="apple" index="0"></constructor-arg>
 		<constructor-arg value="2700000" index="1"></constructor-arg>
+		-->
+		
+		<!--  dependency injection - setter injection -->
+		<!-- 
+			@name	: setter method name, ex) speaker => call setSpeaker() -->
+		<property name="speaker" ref="apple"></property>
+		<property name="price" value="2700000"></property>
+		
 	</bean>
 	<bean id="sony" class="polymorphism.SonySpeaker"></bean>
 	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>

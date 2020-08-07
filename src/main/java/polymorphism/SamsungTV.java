@@ -5,6 +5,7 @@ public class SamsungTV implements TV {
 	private Speaker speaker;
 	private int price;
 	
+	// generator
 	public SamsungTV() {
 		System.out.println("samsung tv generator");
 	}
@@ -17,6 +18,16 @@ public class SamsungTV implements TV {
 	public SamsungTV(Speaker speaker, int price) {
 		System.out.println("samsung tv generator with sony speaker and price");
 		this.speaker = speaker;
+		this.price = price;
+	}
+	
+	// setter
+	public void setSpeaker(Speaker speaker) {
+		System.out.println("samsung tv set speaker");
+		this.speaker = speaker;
+	}
+	public void setPrice(int price) {
+		System.out.println("samsung tv set price");
 		this.price = price;
 	}
 	
