@@ -1,5 +1,7 @@
 package polymorphism;
 
+import java.util.List;
+
 public class SamsungTV implements TV {
 	
 	private Speaker speaker;
@@ -30,6 +32,7 @@ public class SamsungTV implements TV {
 		System.out.println("samsung tv set price");
 		this.price = price;
 	}
+
 	
 	public void powerOn() {
 		System.out.println("smasun tv -- power on, price="+price);
