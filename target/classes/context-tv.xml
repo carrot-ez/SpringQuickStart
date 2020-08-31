@@ -29,11 +29,15 @@
 		<property name="speaker" ref="apple"></property>
 		<property name="price" value="2700000"></property>
 	</bean>
+	
+	
 	<!--  setter injection using p namespace -->
 	<!-- 
 	<bean id="tv" class="polymorphism.SamsungTV" p:speaker-ref="apple" p:price="2700000"></bean>
 	 -->
 	 
+	 <!-- 
 	<bean id="sony" class="polymorphism.SonySpeaker"></bean>
 	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+	 -->
 </beans>
