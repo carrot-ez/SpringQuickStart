@@ -27,6 +27,9 @@ public class BoardDAO {
 	
 	// Impl CRUD
 	// post board
+	/* (non-Javadoc)
+	 * @see com.srpingbook.biz.board.impl.BoardService#insertBoard(com.srpingbook.biz.board.BoardVO)
+	 */
 	public void insertBoard(BoardVO vo) {
 		System.out.println("===> JDBC로 insertBoard() 기능 처리");
 		try {
