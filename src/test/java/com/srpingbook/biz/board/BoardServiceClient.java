@@ -1,9 +1,10 @@
 package com.srpingbook.biz.board;
 
-import java.util.List;
-
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
+
+import com.srpingbook.biz.user.UserService;
+import com.srpingbook.biz.user.UserVO;
 
 public class BoardServiceClient {
 	public static void main(String args[]) {
@@ -11,22 +12,22 @@ public class BoardServiceClient {
 		AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext.xml");
 		
 		// 2. BoardServcieImpl을 lookup
-		BoardService boardService = (BoardService) container.getBean("boardService");
+		UserService userService = (UserService) container.getBean("userService");
 		
-		// 3. 글 등록 기능 테스트
-		BoardVO vo = new BoardVO();
-		vo.setTitle("임시 제목");
-		vo.setWriter("홍길동");
-		vo.setContent("임시 내용");
-		boardService.insertBoard(vo);
+		// 3. 로그인 기능 테스트
+		UserVO vo = new UserVO();
+		vo.setId("test");
+		vo.setPassword("test123");
 		
-		// 4. 글 목록 검색 기능 테스트
-		List<BoardVO> boardList = boardService.getBoardList(vo);
-		for(BoardVO board : boardList) {
-			System.out.println("----> " + board.toString());
+		UserVO user = userService.getUser(vo);
+		if(user != null) {
+			System.out.println(user.getName() + "님 환영합니다");
+		}
+		else {
+			System.out.println("로그인 실패");
 		}
 		
-		// 5. close spring container
+		// 4. close spring container
 		container.close();
 	}
 
