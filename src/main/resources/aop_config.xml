@@ -6,10 +6,15 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 
 	<bean id="log" class="com.springbook.biz.common.Log4jAdvice"></bean>
+	<bean id="afterReturningAdvice" class="com.springbook.biz.common.AfterRetruningAdvice"></bean>
 	<bean id="aroundAdvice" class="com.springbook.biz.common.AroundAdvice"></bean>
 	
 	<aop:config>
 		<aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
+		<aop:aspect ref="afterReturningAdvice">
+			<aop:after-returning pointcut-ref="allPointcut" method="afterReturningLog" returning="returnObj"/>
+		</aop:aspect>
+		<!--  
 		<aop:aspect ref="log">
 			<aop:before pointcut-ref="allPointcut" method="printLogging"/>
 		</aop:aspect>
@@ -17,6 +22,7 @@
 		<aop:aspect ref="aroundAdvice">
 			<aop:around pointcut-ref="allPointcut" method="aroundLog"/>
 		</aop:aspect>
+		-->
 	</aop:config>
 	
 </beans>
