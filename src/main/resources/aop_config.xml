@@ -9,6 +9,9 @@
 	<bean id="afterReturningAdvice" class="com.springbook.biz.common.AfterRetruningAdvice"></bean>
 	<bean id="aroundAdvice" class="com.springbook.biz.common.AroundAdvice"></bean>
 	
+	<!-- for use annotation -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
 	<aop:config>
 		<aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
 		<aop:aspect ref="afterReturningAdvice">
