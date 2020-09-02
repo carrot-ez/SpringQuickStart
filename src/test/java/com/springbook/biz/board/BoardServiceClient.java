@@ -5,8 +5,6 @@ import java.util.List;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import com.springbook.biz.board.BoardService;
-
 public class BoardServiceClient {
 	public static void main(String args[]) {
 		// 1. spring container 구동
@@ -14,6 +12,13 @@ public class BoardServiceClient {
 		
 		// 2. BoardServcieImpl을 lookup
 		BoardService boardService = (BoardService)container.getBean("boardService");
+		
+		BoardVO insertBoard = new BoardVO();
+		insertBoard.setSeq(100);
+		insertBoard.setTitle("임시 제목");
+		insertBoard.setWriter("홍길동");
+		insertBoard.setContent("임시 내용...");
+//		boardService.insertBoard(insertBoard);
 		
 		// 3. 글 리스트 보기
 		BoardVO vo = new BoardVO();

@@ -4,7 +4,7 @@
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
-
+  
 	<bean id="log" class="com.springbook.biz.common.Log4jAdvice"></bean>
 	<bean id="afterReturningAdvice" class="com.springbook.biz.common.AfterRetruningAdvice"></bean>
 	<bean id="aroundAdvice" class="com.springbook.biz.common.AroundAdvice"></bean>
