@@ -1,6 +1,5 @@
 package polymorphism;
 
-import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,7 +11,9 @@ public class LgTV implements TV {
 	@Qualifier("apple")
 	private Speaker appleSpeaker;
 	
-	@Resource(name="sony") // == @Autowired @Qualifier("sony")
+	//@Resource(name="sony") // == @Autowired @Qualifier("sony")
+	@Autowired
+	@Qualifier("sony")
 	private Speaker sonySpeaker; 
 	
 	public LgTV() {

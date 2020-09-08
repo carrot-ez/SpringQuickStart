@@ -107,7 +107,7 @@ public class BoardDAO {
 	// get list of Board
 	public List<BoardVO> getBoardList(BoardVO vo) {
 		System.out.println("===> JDBC·Î getBoardList() ±¸Çö");
-		List<BoardVO> boardList = new ArrayList<>();
+		List<BoardVO> boardList = new ArrayList<BoardVO>();
 		try {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_LIST);
