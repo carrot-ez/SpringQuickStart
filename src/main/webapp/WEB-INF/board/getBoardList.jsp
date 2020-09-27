@@ -39,13 +39,13 @@
 				<th bgcolor="orange" width="100">조회수</th>
 			</tr>
 			
-			<c:forEach items="${boardList }" var="board">
+			<c:forEach items="${boardList}" var="board">
 			<tr>
-				<td>${board.seq }</td>
-				<td align="left"><a href="getBoard.do?seq=${board.seq }">${board.title }</a></td>
-				<td>${board.writer }</td>
-				<td>${board.regDate }</td>
-				<td>${board.cnt }</td>
+				<td>${board['seq'] }</td>
+				<td align="left"><a href="getBoard.do?seq=${board['seq'] }">${board['title'] }</a></td>
+				<td>${board['writer'] }</td>
+				<td>${board['regDate'] }</td>
+				<td>${board['cnt'] }</td>
 			</tr>
 			</c:forEach>
 		
@@ -55,3 +55,8 @@
 	</center>
 </body>
 </html>
+
+<!-- 
+	EL 문법은 getAttribute에 등록한 객체를 \${객체.속성}으로 간단하게 사용할 수 있다.
+	getAttribute에 등록된 객체는 request -> session -> application 순으로 확인하며 꺼낸다.
+ -->
